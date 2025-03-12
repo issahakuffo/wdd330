@@ -16,3 +16,8 @@ async function addToCartHandler(e) {
 document
   .getElementById("addToCart")
   .addEventListener("click", addToCartHandler);
+  const addtoCartbut = document.querySelector("#addToCart");
+  addtoCartbut.addEventListener("click", (event)=>{
+    addToCartHandler(event)
+   });
+ 
