@@ -1,8 +1,8 @@
-import { getParam } from './utils.mjs';
+import { getParam } from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
 import ProductDetails from "./ProductDetails.mjs";
 
-const productId = getParam('product');
+const productId = getParam("product");
 const dataSource = new ProductData("tents");
 
 const product = new ProductDetails(productId, dataSource);
@@ -18,8 +18,7 @@ async function addToCartHandler(e) {
 document
   .getElementById("addToCart")
   .addEventListener("click", addToCartHandler);
-  const addtoCartbut = document.querySelector("#addToCart");
-  addtoCartbut.addEventListener("click", (event)=>{
-    addToCartHandler(event)
-   });
- 
+const addtoCartbut = document.querySelector("#addToCart");
+addtoCartbut.addEventListener("click", (event) => {
+  addToCartHandler(event);
+});
