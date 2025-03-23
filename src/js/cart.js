@@ -2,11 +2,17 @@ import { getLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
+  if (cartItems.length > 0) {
   const htmlItems = cartItems.map(cartItemTemplate).join("");
   document.querySelector(".product-list").innerHTML = htmlItems;
   console.log("tent");
   console.log("cart", cartItems);
-  document.querySelector(".product-list").innerHTML = htmlItems.join("");
+  const total = cartItems.reduce((sum, item) => sum + item.FinalPrice, 0);
+    const totalHtml = `<p class="cart-total">Total: $${total.toFixed(2)}</p>`;
+    document.querySelector(".product-list").insertAdjacentHTML('beforeend', totalHtml);
+  } else {
+    document.querySelector(".product-list").innerHTML = "<p>Your cart is empty</p>";
+  }
 }
 
 function cartItemTemplate(item) {
