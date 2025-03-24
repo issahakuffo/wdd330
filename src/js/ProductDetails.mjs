@@ -32,18 +32,18 @@ export default class ProductDetails {
 }
 
 function productDetailsTemplate(product) {
-  document.querySelector("h2").textContent = product.Brand.Name;
-  document.querySelector("h3").textContent = product.NameWithoutBrand;
+  document.querySelector("h2").textContent = product.Brand?.Name || 'No Brand';
+  document.querySelector("h3").textContent = product.NameWithoutBrand || 'No Name';
 
-  const productImage = document.getElementById("productImage");
-  productImage.src = product.Image;
-  productImage.alt = product.NameWithoutBrand;
+  const productImage = document.querySelector(".divider img");
+  productImage.src = product.Image || 'default.jpg';
+  productImage.alt = product.NameWithoutBrand || 'No Name';
 
-  document.getElementById("productPrice").textContent = product.FinalPrice;
-  document.getElementById("productColor").textContent = product.Colors[0].ColorName;
-  document.getElementById("productDesc").innerHTML = product.DescriptionHtmlSimple;
+  document.querySelector(".product-card__price").textContent = product.FinalPrice || 'No Price';
+  document.querySelector(".product__color").textContent = product.Colors?.[0]?.ColorName || 'No Color';
+  document.querySelector(".product__description").innerHTML = product.DescriptionHtmlSimple || 'No Description';
 
-  document.getElementById("addToCart").dataset.id = product.Id;
+  document.getElementById("addToCart").dataset.id = product.Id || 'No ID';
 }
 
 // ************* Alternative Display Product Details Method *******************
