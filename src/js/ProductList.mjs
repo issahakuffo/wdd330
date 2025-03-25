@@ -1,16 +1,19 @@
 import { renderListWithTemplate } from "./utils.mjs";
 
-
 function productCardTemplate(product) {
     return `
       <li class="product-card">
-        <a href="product_pages/?products=${product.Id}">
+        <a href="product_pages/?product=${product.Id}">
           <img src="${product.Image}" alt="${product.Name}">
-          <h2>${product.Brand.Name}</h2>
-          <h3>${product.Name}</h3>
-          <p class="product-card__price">$${product.FinalPrice}</p>
+          <h2 class="card__brand">${product.Brand.Name}</h2>
+          <h3 class="card__name">${product.NameWithoutBrand}</h3>
+          <div class="product-card__price">
+            <span class="original-price">$${product.ListPrice}</span>
+            <span class="discount-price">$${product.FinalPrice}</span>
+            <span class="discount-badge">${product.Discount} Off!</span>
+          </div>
         </a>
-      </li>`
+      </li>`;
 }
 
 export default class ProductList {
