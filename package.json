@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "outside",
   "version": "2.0.0",
   "description": "Boilerplate for WDD 330 SleepOutside project",
@@ -9,18 +8,8 @@
     "start": "vite",
     "build": "vite build --emptyOutDir",
     "preview": "vite preview",
-=======
-  "name": "sleep-outside",
-  "version": "3.0.0",
-  "description": "Sleepoutside online store",
-  "main": "src/index.html",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
->>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
     "lint": "eslint *.js src/**/*.js",
-    "preview": "vite preview",
-    "format": "prettier --write *.js src/**/*.js",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
     "test": "jest"
   },
   "author": "Shane Thompson",
@@ -31,7 +20,7 @@
     "eslint-plugin-import": "^2.29.1",
     "jest": "^29.7.0",
     "prettier": "^3.2.5",
-    "vite": "^5.4.15"
+    "vite": "^5.4.7"
   },
   "babel": {
     "presets": [

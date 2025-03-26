@@ -16,11 +16,7 @@ export default class ProductDetails {
     // once the HTML is rendered, add a listener to the Add to Cart button
     // Notice the .bind(this). This callback will not work if the bind(this) is missing. Review the readings from this week on "this" to understand why.
     document
-<<<<<<< HEAD
       .getElementById("add-to-cart")
-=======
-      .getElementById("addToCart")
->>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
       .addEventListener("click", this.addProductToCart.bind(this));
   }
 
@@ -36,7 +32,6 @@ export default class ProductDetails {
 }
 
 function productDetailsTemplate(product) {
-<<<<<<< HEAD
   document.querySelector("h2").textContent = product.Category.charAt(0).toUpperCase() + product.Category.slice(1);
   document.querySelector("#p-brand").textContent = product.Brand.Name;
   document.querySelector("#p-name").textContent = product.NameWithoutBrand;
@@ -53,20 +48,6 @@ function productDetailsTemplate(product) {
   document.querySelector("#p-description").innerHTML = product.DescriptionHtmlSimple;
 
   document.querySelector("#add-to-cart").dataset.id = product.Id;
-=======
-  document.querySelector("h2").textContent = product.Brand?.Name || 'No Brand';
-  document.querySelector("h3").textContent = product.NameWithoutBrand || 'No Name';
-
-  const productImage = document.querySelector(".divider img");
-  productImage.src = product.Image || 'default.jpg';
-  productImage.alt = product.NameWithoutBrand || 'No Name';
-
-  document.querySelector(".product-card__price").textContent = product.FinalPrice || 'No Price';
-  document.querySelector(".product__color").textContent = product.Colors?.[0]?.ColorName || 'No Color';
-  document.querySelector(".product__description").innerHTML = product.DescriptionHtmlSimple || 'No Description';
-
-  document.getElementById("addToCart").dataset.id = product.Id || 'No ID';
->>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
 }
 
 // ************* Alternative Display Product Details Method *******************
