@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "name": "outside",
   "version": "2.0.0",
   "description": "Boilerplate for WDD 330 SleepOutside project",
@@ -9,6 +10,15 @@
     "start": "vite",
     "build": "vite build --emptyOutDir",
     "preview": "vite preview",
+=======
+  "name": "sleep-outside",
+  "version": "3.0.0",
+  "description": "Sleepoutside online store",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
 =======
   "name": "sleep-outside",
   "version": "3.0.0",

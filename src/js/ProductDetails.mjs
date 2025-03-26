@@ -17,7 +17,11 @@ export default class ProductDetails {
     // Notice the .bind(this). This callback will not work if the bind(this) is missing. Review the readings from this week on "this" to understand why.
     document
 <<<<<<< HEAD
+<<<<<<< HEAD
       .getElementById("add-to-cart")
+=======
+      .getElementById("addToCart")
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
 =======
       .getElementById("addToCart")
 >>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
@@ -37,6 +41,7 @@ export default class ProductDetails {
 
 function productDetailsTemplate(product) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   document.querySelector("h2").textContent = product.Category.charAt(0).toUpperCase() + product.Category.slice(1);
   document.querySelector("#p-brand").textContent = product.Brand.Name;
   document.querySelector("#p-name").textContent = product.NameWithoutBrand;
@@ -54,6 +59,8 @@ function productDetailsTemplate(product) {
 
   document.querySelector("#add-to-cart").dataset.id = product.Id;
 =======
+=======
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
   document.querySelector("h2").textContent = product.Brand?.Name || 'No Brand';
   document.querySelector("h3").textContent = product.NameWithoutBrand || 'No Name';
 
@@ -66,6 +73,9 @@ function productDetailsTemplate(product) {
   document.querySelector(".product__description").innerHTML = product.DescriptionHtmlSimple || 'No Description';
 
   document.getElementById("addToCart").dataset.id = product.Id || 'No ID';
+<<<<<<< HEAD
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
+=======
 >>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
 }
 

@@ -44,13 +44,19 @@
     },
     "ListPrice": 199.99,
 <<<<<<< HEAD
+<<<<<<< HEAD
     "FinalPrice": 199.99
   },
 =======
+=======
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
     "FinalPrice": 159.99,
     "Discount": "20%"
   },
  
+<<<<<<< HEAD
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
+=======
 >>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
   {
     "Id": "985PR",
@@ -76,7 +82,10 @@
     "Discount": "20%"
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
 
 
 >>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be

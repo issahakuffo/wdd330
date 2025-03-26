@@ -2,6 +2,7 @@ import { renderListWithTemplate } from "./utils.mjs";
 
 function productCardTemplate(product) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   return `
     <li class="product-card">
       <a href="/product_pages/?product=${product.Id}">
@@ -38,6 +39,8 @@ export default class ProductList {
 
 }
 =======
+=======
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
     return `
       <li class="product-card">
         <a href="product_pages/?product=${product.Id}">
@@ -72,4 +75,7 @@ export default class ProductList {
     }
 
 }
+<<<<<<< HEAD
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
+=======
 >>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be

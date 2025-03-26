@@ -220,7 +220,10 @@ button {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
 .product-card__price {
   display: flex;
   flex-wrap: wrap;
@@ -251,6 +254,9 @@ button {
   margin-left: auto;
 }
 
+<<<<<<< HEAD
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
+=======
 >>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
 /* End product list card */
 
@@ -351,5 +357,8 @@ footer {
 
 .hide {
   display: none;
+<<<<<<< HEAD
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
+=======
 >>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
 }

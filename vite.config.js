@@ -7,6 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
 <<<<<<< HEAD
+<<<<<<< HEAD
         main: resolve(__dirname, "src/index.html"),
         cart: resolve(__dirname, "src/cart/index.html"),
         checkout: resolve(__dirname, "src/checkout/index.html"),
@@ -15,6 +16,12 @@ export default defineConfig({
       },
     },
   },
+=======
+        main: 'src/index.html'
+      }
+    }
+  }
+>>>>>>> 1dcf743aa9e31b2255f3273e430577c6bea3f1be
 });
 =======
         main: 'src/index.html'
