@@ -20,8 +20,7 @@
       "Name": "Marmot"
     },
     "ListPrice": 199.99,
-    "FinalPrice": 159.99,
-    "Discount": "20%"
+    "FinalPrice": 199.99
   },
   {
     "Id": "985RF",
@@ -43,10 +42,8 @@
       "Name": "The North Face"
     },
     "ListPrice": 199.99,
-    "FinalPrice": 159.99,
-    "Discount": "20%"
+    "FinalPrice": 199.99
   },
- 
   {
     "Id": "985PR",
     "NameWithoutBrand": "Alpine Guide Tent - 3-Person, 4-Season",
@@ -67,11 +64,8 @@
       "Name": "The North Face"
     },
     "ListPrice": 349.99,
-    "FinalPrice": 279.99,
-    "Discount": "20%"
+    "FinalPrice": 349.99
   },
-
-
   {
     "Id": "344YJ",
     "NameWithoutBrand": "Rimrock Tent - 2-Person, 3-Season",
@@ -93,7 +87,6 @@
       "Name": "Cedar Ridge"
     },
     "ListPrice": 69.99,
-    "FinalPrice": 55.99,
-    "Discount": "20%"
+    "FinalPrice": 69.99
   }
 ]
