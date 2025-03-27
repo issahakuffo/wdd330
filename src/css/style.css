@@ -136,6 +136,23 @@ button {
   fill: gray;
 }
 
+.cart:hover .cart-count {
+  background-color: gray;
+}
+
+.cart .cart-count {
+  position: absolute;
+  top: 0;
+  right: -5px; /* Moved slightly to the right */
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 0.8em;
+}
+
 /* End cart icon styles */
 
 .mission {
