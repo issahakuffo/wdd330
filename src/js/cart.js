@@ -1,14 +1,30 @@
-import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
+import { getLocalStorage } from "./utils.mjs";
 
-loadHeaderFooter();
+
+export function getProductCartCount() {
+  const cartItems = getLocalStorage("so-cart");
+  return cartItems.length;
+}
+
+export function renderCartTotalItems() {
+  const cartItems = getLocalStorage("so-cart");
+  const totalItems = cartItems.length;
+  document.querySelector(".cart-count").textContent = totalItems;
+}
 
 function renderCartContents() {
-  const cartItems = getLocalStorage("so-cart");
-  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  document.querySelector(".product-list").innerHTML = htmlItems.join("");
+  try{
+    const cartItems = getLocalStorage("so-cart");
+    console.log(cartItems);
+    const htmlItems = cartItems.map((item) => cartItemTemplate(item));
+    console.log(htmlItems);
+    document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
-  const total = cartItems.reduce((sum, item) => sum + item.FinalPrice, 0);
-  document.querySelector(".cart-total").textContent = `Total: $${total}`;
+    const total = cartItems.reduce((sum, item) => sum + item.FinalPrice, 0);
+    document.querySelector(".cart-total").textContent = `Total: $${total}`;
+  } catch (error) {
+    console.error("Error rendering cart contents", error);
+  }
 
 }
 function cartItemTemplate(item) {
@@ -31,4 +47,8 @@ function cartItemTemplate(item) {
   return newItem;
 }
 
-renderCartContents();
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.pathname.includes("cart")) {
+    renderCartContents();
+  }
+});
