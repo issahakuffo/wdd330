@@ -481,3 +481,13 @@ button[type="submit"]:hover {
   border-top: 1px solid #ccc;
   padding-top: 8px;
 }
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.discount {
+  color: #f00;
+  font-weight: bold;
+}

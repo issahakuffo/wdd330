@@ -34,6 +34,7 @@ export default class ProductDetails {
 }
 
 function productDetailsTemplate(product) {
+  console.log(product);
   document.querySelector("h2").textContent = product.Category.charAt(0).toUpperCase() + product.Category.slice(1);
   document.querySelector("#p-brand").textContent = product.Brand.Name;
   document.querySelector("#p-name").textContent = product.NameWithoutBrand;
@@ -41,10 +42,32 @@ function productDetailsTemplate(product) {
   const productImage = document.querySelector("#p-image");
   productImage.src = product.Images.PrimaryExtraLarge;
   productImage.alt = product.NameWithoutBrand;
+  const originalPrice = product.SuggestedRetailPrice;
+  const discountedPrice = product.FinalPrice;
+  const euroOriginalPrice = new Intl.NumberFormat('de-DE',
+    {
+      style: 'currency', currency: 'EUR',
+    }).format(Number(originalPrice) * 0.85);
   const euroPrice = new Intl.NumberFormat('de-DE',
     {
       style: 'currency', currency: 'EUR',
-    }).format(Number(product.FinalPrice) * 0.85);
+    }).format(Number(discountedPrice) * 0.85);
+
+  const discount = Math.round((1 - (discountedPrice / originalPrice)) * 100);
+
+  const discountText = document.querySelector("#p-discount");
+
+  if (discount > 0) {
+    discountText.textContent = `-${discount}%`;
+    // añadirle la clase discount para que se vea el texto en rojo
+    discountText.classList.add("discount");
+
+    // añadirle la clase para que se tache el texto del precio original
+    const originalPriceText = document.querySelector("#p-original-price");
+    originalPriceText.classList.add("original-price");
+    originalPriceText.classList.remove("hidden");
+  }
+  document.querySelector("#p-original-price").textContent = `${euroOriginalPrice}`;
   document.querySelector("#p-price").textContent = `${euroPrice}`;
   document.querySelector("#p-color").textContent = product.Colors[0].ColorName;
   document.querySelector("#p-description").innerHTML = product.DescriptionHtmlSimple;
