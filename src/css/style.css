@@ -330,3 +330,154 @@ footer {
   border-top: 1px solid var(--tertiary-color);
   padding: 1em;
 }
+
+.cart-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.checkout-btn{
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.5em 2em;
+  border: none;
+  font-size: var(--large-font);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.checkout-btn:hover {
+  background-color: var(--tertiary-color);
+}
+
+.checkout-container {
+  background: #fff;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .checkout {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .checkout-form {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .order-summary {
+    flex: 0.8;
+  }
+}
+
+.checkout-form fieldset {
+  border: none;
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkout-form legend {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.checkout-form label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.checkout__name, .checkout__address {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.checkout__name input, 
+.checkout__address input {
+  width: 100%;
+}
+
+.checkout__payment {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.checkout__payment input:nth-child(1) {
+  grid-column: span 2;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #333;
+}
+
+.order-summary {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  min-width: 250px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.summary-item.total {
+  font-weight: bold;
+  border-top: 1px solid #ccc;
+  padding-top: 8px;
+}
