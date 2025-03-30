@@ -1,4 +1,7 @@
 import { getLocalStorage } from "./utils.mjs";
+import ExternalServices from "./ExternalServices.mjs";
+
+const dataSource = new ExternalServices();
 
 export default class CheckoutProcess {
   constructor(key, outputSelector) {
@@ -108,6 +111,7 @@ export default class CheckoutProcess {
     order.shipping = this.shipping;
     order.tax = this.tax.toFixed(2);
     order.items = this.packageItems(this.list);
-    return order;
+
+    const response = await dataSource.checkout(order);
   }
 }

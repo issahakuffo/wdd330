@@ -66,3 +66,37 @@ export async function loadHeaderFooter() {
     console.error("Error loading header and footer");
   }
 }
+
+export function alertMessage(message, scroll = true) {
+  // Crear elemento para la alerta
+  const alert = document.createElement("div");
+  alert.classList.add("alert");
+  
+  // Crear botón de cierre (X)
+  const closeButton = document.createElement("span");
+  closeButton.innerText = "✖";
+  closeButton.classList.add("alert-close");
+  
+  // Agregar contenido de la alerta
+  alert.innerText = message;
+  alert.appendChild(closeButton);
+  
+  // Agregar evento para cerrar la alerta
+  closeButton.addEventListener("click", function(e) {
+    e.stopPropagation(); // Evita que el evento se propague
+    alert.remove();
+  });
+  
+  // Agregar la alerta al inicio del elemento main
+  const main = document.querySelector("main");
+  if (main) {
+    main.prepend(alert);
+  } else {
+    console.warn("Elemento <main> no encontrado.");
+  }
+
+  // Desplazar al usuario al inicio si scroll es true
+  if (scroll) {
+    window.scrollTo(0, 0);
+  }
+}

@@ -1,20 +1,16 @@
 import CheckoutProcess from "./CheckoutProcess.mjs";
-import ExternalServices from "./ExternalServices.mjs";
 
 const checkout = new CheckoutProcess("so-cart", "#checkout");
-const dataSource = new ExternalServices();
 
 document.addEventListener("DOMContentLoaded", async () => {
-    checkout.init();
-    checkout.displayOrderTotals();
-    
-    
+  checkout.init();
+  checkout.displayOrderTotals();
+
+  document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
+    e.preventDefault();
     const form = document.querySelector("#checkout-form");
-    form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        const order = await checkout.checkout(form);
-        const response = await dataSource.checkout(order);
-        console.log(response);
-    });
-    }
-);
+    const chk_status = form.checkValidity();
+    form.reportValidity();
+    if (chk_status) checkout.checkout(form);
+  });
+});
