@@ -15,7 +15,7 @@ export function renderCartTotalItems() {
 function renderCartContents() {
   try{
     const cartItems = getLocalStorage("so-cart");
-    console.log(cartItems);
+    console.log(cartItems); //Fixed on Individual1
     const htmlItems = cartItems.map((item) => cartItemTemplate(item));
     console.log(htmlItems);
     document.querySelector(".product-list").innerHTML = htmlItems.join("");
