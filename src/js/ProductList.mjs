@@ -21,16 +21,39 @@ export default class ProductList {
       this.category = category;
       this.dataSource = dataSource;
       this.listElement = listElement;
+      this.products = [];
     }
+
     async init() {
         const list = await this.dataSource.getData();
+        this.products = list;
         this.renderList(list);
+        this.addSortingListener();
     }
-   
+
+    sortProducts(method) {
+        let sortedProducts = [...this.products];
+        switch(method) {
+            case 'name':
+                sortedProducts.sort((a, b) => 
+                    a.NameWithoutBrand.localeCompare(b.NameWithoutBrand));
+                break;
+            case 'price':
+                sortedProducts.sort((a, b) => 
+                    a.FinalPrice - b.FinalPrice);
+                break;
+        }
+        this.renderList(sortedProducts);
+    }
+
+    addSortingListener() {
+        const sortSelect = document.getElementById('sort-select');
+        sortSelect.addEventListener('change', (e) => {
+            this.sortProducts(e.target.value);
+        });
+    }
 
     renderList(list) {
-        //const htmlStrings = list.map(productCardTemplate);
-        //this.listElement.insertAdjacentHTML('afterbegin', htmlStrings.join(''));
         renderListWithTemplate(productCardTemplate, this.listElement, list);
     }
 

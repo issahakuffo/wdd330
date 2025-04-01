@@ -27,40 +27,32 @@ export default class ProductDetails {
   }
 
   renderProductDetails() {
-    productDetailsTemplate(this.product);
+    const template = productDetailsTemplate(this.product);
+    document.querySelector('.product-detail').innerHTML = template;
   }
 }
 
+// Remove the first productDetailsTemplate function and keep only this one
 function productDetailsTemplate(product) {
-  document.querySelector("h2").textContent = product.Brand?.Name || 'No Brand';
-  document.querySelector("h3").textContent = product.NameWithoutBrand || 'No Name';
-
-  const productImage = document.querySelector(".divider img");
-  productImage.src = product.Image || 'default.jpg';
-  productImage.alt = product.NameWithoutBrand || 'No Name';
-
-  document.querySelector(".product-card__price").textContent = product.FinalPrice || 'No Price';
-  document.querySelector(".product__color").textContent = product.Colors?.[0]?.ColorName || 'No Color';
-  document.querySelector(".product__description").innerHTML = product.DescriptionHtmlSimple || 'No Description';
-
-  document.getElementById("addToCart").dataset.id = product.Id || 'No ID';
+    return `<section class="product-detail">
+        <div class="discount-flag">${product.Discount} Off!</div>
+        <h3>${product.Brand.Name}</h3>
+        <h2 class="divider">${product.NameWithoutBrand}</h2>
+        <img
+            class="divider"
+            src="${product.Image}"
+            alt="${product.NameWithoutBrand}"
+        />
+        <p class="product-card__price">
+            <span class="original-price">$${product.ListPrice}</span>
+            <span class="discount-price">$${product.FinalPrice}</span>
+        </p>
+        <p class="product__color">${product.Colors[0].ColorName}</p>
+        <p class="product__description">
+            ${product.DescriptionHtmlSimple}
+        </p>
+        <div class="product-detail__add">
+            <button id="addToCart" data-id="${product.Id}">Add to Cart</button>
+        </div>
+    </section>`;
 }
-
-// ************* Alternative Display Product Details Method *******************
-// function productDetailsTemplate(product) {
-//   return `<section class="product-detail"> <h3>${product.Brand.Name}</h3>
-//     <h2 class="divider">${product.NameWithoutBrand}</h2>
-//     <img
-//       class="divider"
-//       src="${product.Image}"
-//       alt="${product.NameWithoutBrand}"
-//     />
-//     <p class="product-card__price">$${product.FinalPrice}</p>
-//     <p class="product__color">${product.Colors[0].ColorName}</p>
-//     <p class="product__description">
-//     ${product.DescriptionHtmlSimple}
-//     </p>
-//     <div class="product-detail__add">
-//       <button id="addToCart" data-id="${product.Id}">Add to Cart</button>
-//     </div></section>`;
-// }
