@@ -1,4 +1,8 @@
-import { getLocalStorage, setLocalStorage, loadHeaderFooter } from "./utils.mjs";
+import {
+  getLocalStorage,
+  setLocalStorage,
+  loadHeaderFooter,
+} from "./utils.mjs";
 
 // Load the header and footer into the page
 loadHeaderFooter();
@@ -9,7 +13,8 @@ function renderCartContents() {
 
   // If cart is empty, display a message and return early
   if (!cartItems || cartItems.length === 0) {
-    document.querySelector(".product-list").innerHTML = "<p>Your cart is empty.</p>";
+    document.querySelector(".product-list").innerHTML =
+      "<p>Your cart is empty.</p>";
     document.querySelector("#cart-total").textContent = "Total: $0.00"; // Display total price as 0 if empty
     return;
   }
@@ -30,7 +35,7 @@ function renderCartContents() {
 // Function to generate HTML for each cart item
 function cartItemTemplate(item) {
   // Assuming `item.quantity` exists and holds the correct quantity
-  const quantity = item.quantity || 1;  // Default to 1 if quantity is not available
+  const quantity = item.quantity || 1; // Default to 1 if quantity is not available
 
   // Return the HTML string for the cart item
   const newItem = `
@@ -70,18 +75,19 @@ function updateCartTotal(cartItems) {
   let totalPrice = 0;
 
   // Calculate the total price by summing up the price of each item (including quantity)
-  cartItems.forEach(item => {
-    totalPrice += item.FinalPrice * (item.quantity || 1);  // Multiply by quantity, default to 1 if not defined
+  cartItems.forEach((item) => {
+    totalPrice += item.FinalPrice * (item.quantity || 1); // Multiply by quantity, default to 1 if not defined
   });
 
   // Format the total price as currency (US Dollars in this case)
-  const formattedTotal = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
+  const formattedTotal = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
   }).format(totalPrice);
 
   // Display the total price in the cart
-  document.querySelector("#cart-total").textContent = `Total: ${formattedTotal}`;
+  document.querySelector("#cart-total").textContent =
+    `Total: ${formattedTotal}`;
 }
 
 // Function to remove a product from the cart
@@ -90,7 +96,7 @@ function removeProductFromCart(event) {
   const cartItems = getLocalStorage("so-cart") || [];
 
   // Filter out the product from the cart based on product ID
-  const updatedCartItems = cartItems.filter(item => item.Id !== itemId);
+  const updatedCartItems = cartItems.filter((item) => item.Id !== itemId);
 
   // Save the updated cart back to localStorage
   setLocalStorage("so-cart", updatedCartItems);
@@ -103,6 +109,6 @@ function removeProductFromCart(event) {
 renderCartContents();
 
 // Optional: Prevent default behavior for links (in case you don't want them to navigate anywhere)
-document.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', (e) => e.preventDefault());
+document.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", (e) => e.preventDefault());
 });
