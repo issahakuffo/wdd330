@@ -279,8 +279,6 @@ footer {
   display: none;
 }
 
-/* ...existing code... */
-
 .sort-container {
   display: flex;
   align-items: center;
@@ -301,4 +299,288 @@ footer {
   cursor: pointer;
 }
 
-/* ...existing code... */
+.welcome-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    animation: slideIn 0.3s ease-out;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1em;
+}
+
+.modal-body ul {
+    margin: 1em 0;
+    padding-left: 1.5em;
+}
+
+.modal-body ul li {
+    margin-bottom: 0.5em;
+    color: var(--dark-grey);
+}
+
+.giveaway-text {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 1em 0;
+    font-weight: bold;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1.5em 0;
+}
+
+.register-form input {
+    padding: 1em;
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.register-btn {
+    background-color: var(--primary-color);
+    margin-bottom: 1em;
+}
+
+.close-modal {
+    width: 100%;
+    background-color: transparent;
+    color: var(--dark-grey);
+    border: 1px solid var(--light-grey);
+}
+
+.thank-you-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1em 2em;
+    border-radius: 4px;
+    animation: slideUp 0.3s ease-out;
+    z-index: 1000;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.quick-view-btn {
+    width: 100%;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--small-font);
+}
+
+.quick-view-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.quick-view-content {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.quick-view-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+.quick-view-details img {
+    width: 100%;
+    height: auto;
+}
+
+.close-quick-view {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+}
+
+.quick-view-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+@media (max-width: 768px) {
+    .quick-view-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+.login-main {
+    max-width: 400px;
+    margin: 2em auto;
+    padding: 1em;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.form-control input {
+    padding: 0.5em;
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 1em;
+}
+
+.order-card {
+    border: 1px solid var(--light-grey);
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 4px;
+}
+
+.order-card button {
+    margin-top: 1em;
+    background-color: var(--primary-color);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.newsletter {
+  text-align: center;
+  padding: 2em;
+  background-color: var(--light-grey);
+  margin: 2em auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter h2 {
+  margin-bottom: 1em;
+  color: var(--secondary-color);
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.newsletter input[type="email"] {
+  padding: 0.8em;
+  font-size: 1em;
+  border: 1px solid var(--dark-grey);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.newsletter button {
+  padding: 0.8em;
+  font-size: 1em;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: var(--secondary-color);
+}
+
+#newsletter-message {
+  margin-top: 1em;
+  font-size: 0.9em;
+  color: var(--secondary-color);
+}

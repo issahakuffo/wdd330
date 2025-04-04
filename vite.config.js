@@ -1,13 +1,13 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  root: 'src/',
+  root: "src/",
   build: {
-    outDir: '../dist',
+    outDir: "../dist",
     rollupOptions: {
       input: {
-        main: 'src/index.html'
-      }
-    }
-  }
+        main: "src/index.html",
+      },
+    },
+  },
 });
