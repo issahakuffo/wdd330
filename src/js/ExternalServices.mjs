@@ -16,10 +16,16 @@ export default class ExternalServices {
     // this.path = `../public/json/${this.category}.json`;
   }
   async getData(category) {
-    const response = await fetch(`${baseURL}products/search/${category}`);
+    const response = await fetch(`../json/${category}.json`);
+    console.log(response);
     const data = await convertToJson(response);
-    
-    return data.Result;
+    console.log(data)
+    if(category  == "tents"){
+      return data;
+    }
+    else{
+      return data.Result;
+  }
   }
   async checkout(order) {
     try {
@@ -56,11 +62,20 @@ export default class ExternalServices {
       }
     }
   }
-  async findProductById(id) {
-    const response = await fetch(`${baseURL}product/${id}`);
+  async findProductById(id,category) {
+    const response = await fetch(`../json/${category}.json`);
+    console.log(response);
     const data = await convertToJson(response);
-    console.log(data.Result);
-    return data.Result;
+  
+    if(category  == "tents"){
+      const result = data.filter(item =>item.Id === id)
+      return result
+    }
+    else{
+      console.log(data.Result);
+      const result = data.Result.filter(item =>item.Id === id)
+      return result
+  }
   }
 
 
